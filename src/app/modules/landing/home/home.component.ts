@@ -20,6 +20,12 @@ export class LandingHomeComponent implements OnInit, OnDestroy
     {
     }
 
+
+    get currentYear(): number
+    {
+        return new Date().getFullYear();
+    }
+
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks
     // -----------------------------------------------------------------------------------------------------
@@ -64,4 +70,5 @@ export class LandingHomeComponent implements OnInit, OnDestroy
     {
         return item.id || index;
     }
+
 }

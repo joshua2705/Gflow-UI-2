@@ -28,7 +28,7 @@
                     class="mt-8"
                     mat-flat-button
                     [color]="'primary'"
-                    [routerLink]="'/dashboards/project'"
+                    [routerLink]="'/authority-sign-in'"
                     style="margin-right:1em">
                     <span>Authority</span>
                 </a>
@@ -36,7 +36,7 @@
                     class="mt-8"
                     mat-flat-button
                     [color]="'primary'"
-                    [routerLink]="'/dashboards/project'">
+                    [routerLink]="'/citizen-sign-in'">
                     <span>Citizen</span>
                 </a>
             </div>
@@ -84,6 +84,10 @@
                 </mat-expansion-panel>
             </ng-container-->
         </mat-accordion>
+
+        <div class="relative flex flex-0 items-center justify-start w-full h-16 sm:h-20 px-6 sm:px-8 z-49 bg-card border-t dark:bg-default print:hidden">
+            <span class="font-medium text-secondary">Fuse &copy; {{currentYear}}</span>
+        </div>
 
     </div>
 </div>

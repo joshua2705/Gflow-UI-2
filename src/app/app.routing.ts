@@ -33,7 +33,11 @@ export const appRoutes: Route[] = [
             {path: 'forgot-password', loadChildren: () => import('app/modules/auth/forgot-password/forgot-password.module').then(m => m.AuthForgotPasswordModule)},
             {path: 'reset-password', loadChildren: () => import('app/modules/auth/reset-password/reset-password.module').then(m => m.AuthResetPasswordModule)},
             {path: 'sign-in', loadChildren: () => import('app/modules/auth/sign-in/sign-in.module').then(m => m.AuthSignInModule)},
-            {path: 'sign-up', loadChildren: () => import('app/modules/auth/sign-up/sign-up.module').then(m => m.AuthSignUpModule)}
+            {path: 'sign-up', loadChildren: () => import('app/modules/auth/sign-up/sign-up.module').then(m => m.AuthSignUpModule)},
+            {path: 'citizen-sign-in', loadChildren: () => import('app/modules/auth/citizen-sign-in/citizen-sign-in.module').then(m => m.CitiAuthSignInModule)},
+            {path: 'authority-sign-in', loadChildren: () => import('app/modules/auth/authority-sign-in/authority-sign-in.module').then(m => m.AuthorityAuthSignInModule)},
+            {path: 'citizen-sign-up', loadChildren: () => import('app/modules/auth/citizen-sign-up/citizen-sign-up.module').then(m => m.CitiAuthSignUpModule)},
+            {path: 'authority-sign-up', loadChildren: () => import('app/modules/auth/authority-sign-up/authority-sign-up.module').then(m => m.AuthorityAuthSignUpModule)}
         ]
     },
 
