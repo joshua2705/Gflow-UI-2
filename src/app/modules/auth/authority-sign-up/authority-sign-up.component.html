@@ -129,8 +129,26 @@
                             [formControlName]="'company'">
                     </mat-form-field>
 
+                    <!-- Upload Doc 1 Button -->
+                    <div class="buttonContainer w-full">
+                        <input #doc1Input hidden="false" id="idly" type="file" (change)="imageInputChange($event)" [formControlName]="'doc1'"  accept=".jpeg, .jpg"/>
+                        <button mat-flat-button class="uploadButton" [ngClass]="uploadDoc1Status ? 'w-5/6' : 'w-full'" color="primary" (click)="doc1Input.click()">
+                            <div *ngIf="!uploadDoc1Status">
+                                Upload Doc1<mat-icon svgIcon="heroicons_outline:arrow-circle-up"></mat-icon>
+                            </div>
+                            <div *ngIf="uploadDoc1Status">
+                                Doc1 Uploaded<mat-icon svgIcon="heroicons_outline:check-circle"></mat-icon>
+                            </div>
+                        </button>
+                        <button mat-flat-button class="resetButton"  [ngClass]="uploadDoc1Status ? 'visible w-5' : 'invisible w-0'" color="warn" (click)="imageReset(); doc1Input.reset()">
+                            <div *ngIf="uploadDoc1Status">
+                                <mat-icon svgIcon="heroicons_outline:trash"></mat-icon>
+                            </div>
+                        </button>
+                    </div>
+
                     <!-- ToS and PP -->
-                    <div class="inline-flex items-end w-full mt-1.5">
+                    <div class="information inline-flex items-end w-full mt-1.5">
                         <mat-checkbox
                             [color]="'primary'"
                             [formControlName]="'agreements'">

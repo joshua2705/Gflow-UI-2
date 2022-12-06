@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
@@ -8,6 +8,7 @@ import { AuthService } from 'app/core/auth/auth.service';
 @Component({
     selector     : 'authority-auth-sign-up',
     templateUrl  : './authority-sign-up.component.html',
+    styleUrls  : ['./authority-sign-up.component.scss'],
     encapsulation: ViewEncapsulation.None,
     animations   : fuseAnimations
 })
@@ -21,6 +22,7 @@ export class AuthorityAuthSignUpComponent implements OnInit
     };
     signUpForm: UntypedFormGroup;
     showAlert: boolean = false;
+    uploadDoc1Status: boolean = false;
 
     /**
      * Constructor
@@ -48,7 +50,8 @@ export class AuthorityAuthSignUpComponent implements OnInit
                 email     : ['', [Validators.required, Validators.email]],
                 password  : ['', Validators.required],
                 company   : [''],
-                agreements: ['', Validators.requiredTrue]
+                agreements: ['', Validators.requiredTrue],
+                doc1    : [null]
             }
         );
     }
@@ -56,6 +59,16 @@ export class AuthorityAuthSignUpComponent implements OnInit
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
+
+    imageInputChange(fileInputEvent: any): void {
+        console.log(fileInputEvent.target.files[0]);
+        this.uploadDoc1Status = true;
+      }
+
+    imageReset(): any{
+        this.uploadDoc1Status = false;
+        (document.getElementById('idly') as HTMLInputElement).value = null;
+    }
 
     /**
      * Sign up

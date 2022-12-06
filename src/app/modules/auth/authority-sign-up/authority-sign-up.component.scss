@@ -1,0 +1,28 @@
+mat-icon{
+    transform:scale(0.8);
+    vertical-align: middle;
+    padding-bottom: 3px;
+    width: max-content;
+}
+
+.uploadButton{
+    z-index: 1;
+    position: absolute;
+    transition: width 1s;
+}
+
+.resetButton{
+    z-index: 2;
+    position: absolute;
+    margin-left: 18.2em;
+}
+
+.buttonContainer{
+    position: relative;
+}
+
+.information{
+    position: relative;
+    top: 50px;
+    margin-bottom: 50px;
+}
